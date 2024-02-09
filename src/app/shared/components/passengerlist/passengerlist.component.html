@@ -1,0 +1,23 @@
+
+
+
+<div class="card mt-4">
+    <div class="card-header">
+        <h2 class="text-capitalize">airline passengers &#x2708;</h2>
+    </div>
+    <div class="card-body">
+        <p>
+            <strong>Total checked in : </strong> {{count}}/{{passengerlist.length}}</p>
+        <ul class="list-group">
+            <li class="list-group-item mb-2 d-flex align-items-center"
+            *ngFor="let passenger of passengerlist">
+                <span [ngClass]="{
+                    'bg-success' : passenger.checkedIn,
+                    'bg-danger'  : !passenger.checkedIn
+                }">&nbsp;</span>
+                {{passenger.fullname}}
+            </li>
+        </ul>
+    </div>
+</div>
+

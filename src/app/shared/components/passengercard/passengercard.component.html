@@ -1,0 +1,27 @@
+<div class="card mb-4">
+    <div class="card-header">
+        <h4 class="m-0" *ngIf="form else formgroup">{{passengercard.fullname}}</h4>
+    </div>
+    <div class="card-body">
+        <strong>Total checked in : </strong>
+        {{passengercard.checkInDate ? (passengercard.checkInDate | date : 'longDate') : 'not checked In'}} <br>
+        
+        <p><strong>children : </strong>{{passengercard.children ? (passengercard.children.length) : 0}}</p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <button class="btn btn-primary" *ngIf="isDisable else update"
+        (click)="onclick()"><strong>Edit</strong></button>
+        <button class="btn btn-danger"
+        (click)="onDelete()"><strong>Delete</strong></button>
+    </div>
+</div>
+
+<ng-template #formgroup>
+    <div class="form-group" >
+        <input type="text" class="form-control" #control [value]="passengercard.fullname">
+    </div>
+</ng-template>
+<ng-template #update>
+    <button class="btn btn-primary"
+    (click)="onupdate()"><strong>update</strong></button>
+</ng-template>
