@@ -3,7 +3,7 @@
         <h4 class="m-0" *ngIf="form else formgroup">{{passengercard.fullname}}</h4>
     </div>
     <div class="card-body">
-        <strong>Total checked in : </strong>
+        <strong>Checked in : </strong>
         {{passengercard.checkInDate ? (passengercard.checkInDate | date : 'longDate') : 'not checked In'}} <br>
         
         <p><strong>children : </strong>{{passengercard.children ? (passengercard.children.length) : 0}}</p>
